@@ -1,0 +1,11 @@
+docker-compose up --build
+
+## Pull LLaMA 3 model (ONE TIME)
+
+docker exec -it ai-saas-ollama-1 ollama pull llama3
+
+## Test API
+
+curl -X POST http://localhost:8000/query \
+  -H "Content-Type: application/json" \
+  -d '{"question":"Explain REST APIs"}'
